@@ -1,0 +1,349 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180.61deg,
+        #000000e3 25.16%,
+        #04254fc4 80%,
+        #409ecdcb 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #ffffff;
+    padding: 2em;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.ficha {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+
+/* Container do Top 10 Episódios */
+.top5__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(4, 37, 79, 0.15);
+    border: 1px solid rgba(64, 158, 205, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Card de episódio */
+.episodio-card {
+    background: linear-gradient(180deg, rgba(4, 37, 79, 0.8) 0%, rgba(0, 0, 0, 0.85) 100%);
+    padding: 1.5rem;
+    border-radius: 14px;
+    width: 230px;
+    min-height: 160px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(64, 158, 205, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.episodio-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, #409ecd, #5bb3e0, #a5e6ff);
+}
+
+.episodio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(64, 158, 205, 0.5);
+    border-color: #5bb3e0;
+    background: linear-gradient(180deg, rgba(4, 37, 79, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.episodio-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #5bb3e0;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.episodio-card p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.4rem;
+}
+
+.episodio-card p b {
+    color: #a5e6ff;
+    font-weight: 600;
+}
+
+
+@media screen and (max-width: 768px) {
+    .episodio-card {
+        width: 100%;
+    }
+}
+
+
+
+
+
+.ficha img {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin: 0 3em 2em 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ficha img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.ficha-descricao {
+    display: flex;
+    align-items: flex-start;
+    gap: 2em;
+    margin-bottom: 3em;
+}
+
+.ficha-descricao div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    flex: 1;
+}
+
+.ficha-temporada {
+    margin-bottom: 2em;
+}
+
+.ficha-temporada h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #409ecd;
+    margin-bottom: 1em;
+}
+
+.episodios-lista {
+    height: auto;
+    max-height: 60vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5em;
+    list-style-type: none;
+    overflow-y: auto;
+    padding-right: 1em;
+}
+
+.episodios-lista::-webkit-scrollbar {
+    width: 8px;
+}
+
+.episodios-lista::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.episodios-lista::-webkit-scrollbar-thumb {
+    background: #409ecd;
+    border-radius: 4px;
+}
+
+.episodios-lista::-webkit-scrollbar-thumb:hover {
+    background: #5bb3e0;
+}
+
+.episodio-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5em;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.episodio-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(64, 158, 205, 0.3);
+}
+
+h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    background: linear-gradient(45deg, #409ecd, #5bb3e0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(64, 158, 205, 0.3);
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #409ecd;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #5bb3e0;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: justify;
+}
+
+select, option {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2em;
+    padding: 1em 1.5em;
+    margin-bottom: 1em;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 2px solid rgba(64, 158, 205, 0.3);
+    border-radius: 50px;
+    outline: none;
+    min-width: 250px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+select:hover {
+    border-color: #409ecd;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+select:focus {
+    border-color: #5bb3e0;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(64, 158, 205, 0.3);
+}
+
+option {
+    background: rgba(4, 37, 79, 0.95);
+    color: #ffffff;
+    padding: 0.5em;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ficha {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Responsividade */
+@media screen and (max-width: 900px) {
+    body {
+        padding: 1em;
+    }
+    
+    .ficha {
+        padding: 1.5em;
+    }
+    
+    .ficha-descricao {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .ficha img {
+        margin: 0 auto 2em auto;
+        max-width: 250px;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    h2 {
+        font-size: 2em;
+    }
+    
+    .episodios-lista {
+        grid-template-columns: 1fr;
+        max-height: 50vh;
+    }
+    
+    select {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    h2 {
+        font-size: 1.8em;
+    }
+    
+    p {
+        font-size: 1.1em;
+    }
+    
+    select {
+        font-size: 1.1em;
+        padding: 0.8em 1.2em;
+    }
+    
+    .ficha-temporada h3 {
+        font-size: 1.5em;
+    }
+}
+
+/* Estados de carregamento */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
