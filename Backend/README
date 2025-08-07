@@ -1,4 +1,10 @@
-# Configurar Seu Banco de Dados
+# Screenmatch - Guia para Configuração e Execução
+
+## 1. Configurar o Banco de Dados
+
+No arquivo `application.properties`, configure a conexão com seu banco MySQL:
+
+```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/seu_banco?useSSL=false&serverTimezone=UTC
 spring.datasource.username=${DB_USER}
 spring.datasource.password=${DB_PASS}
@@ -9,7 +15,20 @@ spring.jpa.format-sql=true
 
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 
-# Adicione Séries e Episódios no Banco de dados, você pode adicionar diretamente ou utilizar o ScreematchAplicationSemWeb, é só descomentar esse e comentar o ScreenmatchAplication, apos iniciar e adicionar series comando 1 e adicionar episodios comando 2 : //package br.com.alura.screenmatch;
+
+2. Inserir Séries e Episódios no Banco
+Você pode adicionar dados diretamente no banco ou usar a aplicação sem interface web.
+
+Para usar a versão sem web:
+
+Comente a classe ScreenmatchApplication.
+
+Descomente a classe ScreenmatchApplicationSemWeb abaixo:
+
+java
+Copiar
+Editar
+//package br.com.alura.screenmatch;
 //
 //import br.com.alura.screenmatch.principal.Principal;
 //import br.com.alura.screenmatch.repository.EpisodioRepository;
@@ -21,26 +40,35 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 //
 //@SpringBootApplication
 //public class ScreenmatchApplicationSemWeb implements CommandLineRunner {
-//	@Autowired
-//	private SerieRepository repositorio;
-//	@Autowired
-//	private EpisodioRepository episodioRepository;
 //
+//    @Autowired
+//    private SerieRepository repositorio;
 //
-//	public static void main(String[] args) {
-//		SpringApplication.run(ScreenmatchApplicationSemWeb.class, args);
-//	}
+//    @Autowired
+//    private EpisodioRepository episodioRepository;
 //
-//	@Override
-//	public void run(String... args) throws Exception {
-//		Principal principal = new Principal(repositorio, episodioRepository);
-//		principal.exibeMenu();
-//	}
-//} 
+//    public static void main(String[] args) {
+//        SpringApplication.run(ScreenmatchApplicationSemWeb.class, args);
+//    }
+//
+//    @Override
+//    public void run(String... args) throws Exception {
+//        Principal principal = new Principal(repositorio, episodioRepository);
+//        principal.exibeMenu();
+//    }
+//}
+Após iniciar, use:
 
+Comando 1 para adicionar séries
 
-após isso configure a rota do live server e do corsConfigurations
+Comando 2 para adicionar episódios
 
+3. Configurar CORS para Frontend (Live Server)
+Crie a classe abaixo para configurar CORS e permitir acesso do front-end:
+
+java
+Copiar
+Editar
 package br.com.alura.screenmatch.config;
 
 import org.springframework.context.annotation.Configuration;
@@ -53,7 +81,7 @@ public class CorsConfiguration implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://127.0.0.1:5500") // talvez seja 5001.
+                .allowedOrigins("http://127.0.0.1:5500") // ajuste a porta se necessário
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "TRACE", "CONNECT");
     }
 }
