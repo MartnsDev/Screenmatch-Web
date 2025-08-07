@@ -5,15 +5,15 @@
 No arquivo `application.properties`, configure a conexão com seu banco MySQL/Postgree/Outros:
 
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/seu_banco?useSSL=false&serverTimezone=UTC
-spring.datasource.username=${DB_USER}
-spring.datasource.password=${DB_PASS}
+spring.datasource.url=jdbc:mysql://localhost:3306/seu_banco?useSSL=false&serverTimezone=UTC //Mude aqui.
+spring.datasource.username=${DB_USER} //Você pode criar o banco por fora e colocar o nome aqui
+spring.datasource.password=${DB_PASS} 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 server.port=8081
 spring.jpa.format-sql=true
 
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect // talvez aqui também
 
 
 2. Inserir Séries e Episódios no Banco
@@ -27,7 +27,7 @@ Descomente a classe ScreenmatchApplicationSemWeb abaixo:
 
 
 //package br.com.alura.screenmatch;
-//
+
 //import br.com.alura.screenmatch.principal.Principal;
 //import br.com.alura.screenmatch.repository.EpisodioRepository;
 //import br.com.alura.screenmatch.repository.SerieRepository;
@@ -35,10 +35,10 @@ Descomente a classe ScreenmatchApplicationSemWeb abaixo:
 //import org.springframework.boot.CommandLineRunner;
 //import org.springframework.boot.SpringApplication;
 //import org.springframework.boot.autoconfigure.SpringBootApplication;
-//
+
 //@SpringBootApplication
 //public class ScreenmatchApplicationSemWeb implements CommandLineRunner {
-//
+
 //    @Autowired
 //    private SerieRepository repositorio;
 //
@@ -48,17 +48,16 @@ Descomente a classe ScreenmatchApplicationSemWeb abaixo:
 //    public static void main(String[] args) {
 //        SpringApplication.run(ScreenmatchApplicationSemWeb.class, args);
 //    }
-//
+
 //    @Override
 //    public void run(String... args) throws Exception {
 //        Principal principal = new Principal(repositorio, episodioRepository);
 //        principal.exibeMenu();
 //    }
-//}
+  }
+
 Após iniciar, use:
-
 Comando 1 para adicionar séries
-
 Comando 2 para adicionar episódios
 
 3. Configurar CORS para Frontend (Live Server)
