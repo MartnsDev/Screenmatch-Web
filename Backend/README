@@ -8,3 +8,35 @@ server.port=8081
 spring.jpa.format-sql=true
 
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+# Adicione Séries e Episódios no Banco de dados, você pode adicionar diretamente ou utilizar o ScreematchAplicationSemWeb, é só descomentar esse e comentar o ScreenmatchAplication, apos iniciar e adicionar series comando 1 e adicionar episodios comando 2 : //package br.com.alura.screenmatch;
+//
+//import br.com.alura.screenmatch.principal.Principal;
+//import br.com.alura.screenmatch.repository.EpisodioRepository;
+//import br.com.alura.screenmatch.repository.SerieRepository;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.CommandLineRunner;
+//import org.springframework.boot.SpringApplication;
+//import org.springframework.boot.autoconfigure.SpringBootApplication;
+//
+//@SpringBootApplication
+//public class ScreenmatchApplicationSemWeb implements CommandLineRunner {
+//	@Autowired
+//	private SerieRepository repositorio;
+//	@Autowired
+//	private EpisodioRepository episodioRepository;
+//
+//
+//	public static void main(String[] args) {
+//		SpringApplication.run(ScreenmatchApplicationSemWeb.class, args);
+//	}
+//
+//	@Override
+//	public void run(String... args) throws Exception {
+//		Principal principal = new Principal(repositorio, episodioRepository);
+//		principal.exibeMenu();
+//	}
+//} 
+
+
+após isso configure a rota do live server e do corsConfigurations
