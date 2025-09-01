@@ -40,3 +40,54 @@ spring.datasource.url=jdbc:mysql://localhost:3306/screenmatch_db
 spring.datasource.username=root
 spring.datasource.password=sua_senha
 ```
+
+Build e execução:
+```
+mvn clean install
+java -jar target/screenmatch-api.jar
+
+A API estará disponível em: http://localhost:8080/
+```
+
+2. Frontend
+
+Abra a pasta do frontend
+
+Configure a URL da API no JavaScript:
+
+const API_URL = "http://localhost:8080";
+
+
+Abra o index.html no navegador ou use um servidor local (ex: Live Server do VS Code)
+
+🔹 Estrutura do Projeto
+
+```
+ScreenMatch/
+│
+├── backend/               → código Java/Spring Boot
+│   ├── src/
+│   └── target/            → build do backend
+│
+├── frontend/              → HTML, CSS e JS
+│   ├── index.html
+│   ├── css/
+│   └── js/
+│
+└── README.md
+```
+🔹 Observações
+
+Certifique-se que o backend esteja rodando antes de abrir o frontend
+
+A chave da OMDB API é obrigatória para buscar filmes
+
+Projeto ideal para estudar full stack Java + Web
+
+👨‍💻 Autor
+
+Matheus Martins
+
+Email: mtz.martinss03@gmail.com
+
+LinkedIn: linkedin.com/in/martnsdeveloper
