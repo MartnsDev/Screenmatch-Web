@@ -125,5 +125,5 @@ Matheus Martins
 
 Email: mtz.martinss03@gmail.com
 
-LinkedIn: linkedin.com/in/martnsdeveloper
+LinkedIn: https://www.linkedin.com/in/matheusmartnsdev/
 ```
