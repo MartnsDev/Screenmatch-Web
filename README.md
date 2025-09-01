@@ -122,9 +122,11 @@ Projeto ideal para estudar full stack Java + Web
 
 Matheus Martins
 
+Email: 
 ```
-Email: mtz.martinss03@gmail.com
+mtz.martinss03@gmail.com
 ```
+LinkedIn: 
 ```
-LinkedIn: https://www.linkedin.com/in/matheusmartnsdev/
+linkedin.com/in/matheusmartnsdev/
 ```
