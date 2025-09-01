@@ -28,6 +28,40 @@ O frontend é feito em **HTML, CSS e JavaScript** consumindo a API do backend.
 
 ---
 
+🔹 Configuração de CORS
+
+Para permitir que o frontend HTML/JS acesse a API sem bloqueio:
+
+// src/main/java/br/com/screenmatch/config/CorsConfig.java
+```
+package br.com.screenmatch.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class CorsConfig {
+
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**")                 // Permite todas as rotas
+                        .allowedOrigins("http://localhost:5500") // URL do frontend
+                        .allowedMethods("GET", "POST", "PUT", "DELETE")
+                        .allowedHeaders("*")
+                        .allowCredentials(true);
+            }
+        };
+    }
+}
+```
+
+🔹 Substitua "http://localhost:5500" pelo endereço real do seu frontend, se necessário.
+---
 ## ▶️ Como Executar
 
 ### 1. Backend
