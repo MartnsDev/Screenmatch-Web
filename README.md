@@ -120,8 +120,10 @@ Projeto ideal para estudar full stack Java + Web
 
 👨‍💻 Autor
 
+```
 Matheus Martins
 
 Email: mtz.martinss03@gmail.com
 
 LinkedIn: linkedin.com/in/martnsdeveloper
+```
