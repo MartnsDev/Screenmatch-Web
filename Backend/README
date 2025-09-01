@@ -1,6 +1,6 @@
-# Vollmed API - Backend
+# Screenmatch - Backend
 
-Este README explica como configurar e rodar o **backend da Vollmed API** desenvolvido em **Java 17 + Spring Boot**.  
+Este README explica como configurar e rodar o **backend da Screenmatch** desenvolvido em **Java 17 + Spring Boot**.  
 
 ---
 
@@ -25,30 +25,22 @@ DATASOURCE_URL=jdbc:mysql://localhost:3306/screenmatch
 DATASOURCE_USERNAME=root
 DATASOURCE_PASSWORD=sua_senha
 ```
-🔹 Obs: O JWT_SECRET é usado para assinar tokens de autenticação.
 
 🔹 Rodando a Aplicação
 
 Dentro da pasta backend:
 
 # Baixar dependências e gerar o build
+
+```
 mvn clean install
 
 # Rodar a aplicação
 java -jar target/api.jar
-
+```
 
 A API estará disponível em: http://localhost:8080/**
 
-🔹 Configuração de Perfis
-
-O projeto possui diferentes profiles para ambientes:
-
-application-dev.properties → ambiente de desenvolvimento
-
-application-prod.properties → ambiente de produção
-
-Você pode alternar o profile usando:
 
 # Rodando com profile dev
 java -jar target/api.jar --spring.profiles.active=dev
@@ -68,10 +60,10 @@ mvn test
 
 Para permitir que o frontend acesse a API sem problemas de CORS, adicione a seguinte configuração:
 
-// src/main/java/br/com/vollmed/config/CorsConfig.java
-package br.com.vollmed.config;
+// src/main/java/br/com/screenmacth/config/CorsConfig.java
 
 ```
+package br.com.vollmed.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
